@@ -2,22 +2,30 @@ other commands:
 
 i) renaming the master branch.
 
-    git branch -M branch_name
+    cmd: git branch -M branch_name
     - git branch -M main
 
 ii) add and commit with a single command.
     (for this to work the file must be already added in the staging area. if the file is branc new and
      not yet added in the staging area/git add this wouldn't work)
 
-    git commit -a -m "commit_name"
+    cmd: git commit -a -m "commit_name"
     - git commit -a -m "updated issues page"
 
 iii) create and switch to a new branch with a single command.
 
-    git checkout -b new_branch_name
+    cmd: git checkout -b new_branch_name
     - git checkout -b feature/email
 
 iv) listing branches.
-    - listing local branches: git branch -v
-    - listing remote branches: git branch -r
 
+    - listing local branches. 
+        cmd: git branch -v
+    - listing remote branches.
+        cmd: git branch -r
+
+v) listing commits.
+
+    cmd: git log
+    or
+    cmd: git log --oneline

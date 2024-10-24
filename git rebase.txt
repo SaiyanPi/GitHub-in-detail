@@ -1,2 +1,31 @@
 git rebase:
 
+- see image files rebase1.png, rebase2.png, rebase3.png, and rebase_overview.png.
+
+---------------------------------------------------------------------------------------------------------
+
+suppose you have a 2 branches; main branch and bugfix/spider branch.
+cmd:
+    i) first checkout to bugfix/spider branch.
+
+        git checkout bugfix/spider
+    
+    ii) rebase main branch.
+
+        git rebase main
+        - applies the changes from main branch to the bugfix/spider branch
+        - although the branch appears the same, it's made up of entirely new commits.
+
+    iii) checkout to main branch.
+
+        git checkout main
+
+    iv) rebase gugfix/spider branch.
+
+        git rebase bugfix/spider
+        - applies the changes from bugfix/spider branch to the main branch.
+
+    v) now you can delete the bugfix/spider branch if you want to.
+
+    
+

@@ -1,0 +1,28 @@
+Pushing your local file/file_changes/updates to GitHub online repository:
+
+- see overview.png
+
+-------------------------------------------------------------------------------------------------------
+
+in the working directory terminal,
+
+    i) cmd: git init
+        - creates a local repository.
+
+    ii) cmd: git add .
+        - adds all file in a local repository.
+        or
+        cmd: git add file_name
+        - adds a specific file in a local repository.
+
+    iii) cmd: git commit -m "first commit - added in github"
+        - create a snapshot of the staged changes along a timeline of a Git projects history.
+        - listing all the commits in detail.
+            cmd: git log 
+
+    iv) cmd: git remote add origin github_repository_link
+        - adds a remote repositoy to your local repository
+        - this allows you to push and pull changes between your local and remote repositories.
+
+    v) cmd: git push origin master
+        - finally pushes your local file from local repositoy to remote repository.
