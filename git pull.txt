@@ -1,0 +1,34 @@
+git pull:
+
+- you have a local system and an online repository GitHub.
+  when multiple person are working on the same repository, your local file may not match with the file
+  copy in an online repository. someone could have added a new file or updated the existing file in an
+  online repository. In this case you cannot push your locally made changes in an online repository.
+
+  for eg, 
+    i) update and commit the index file directly in an online repository.
+        note that now the file on your local machine and on the online repository are different.
+
+    ii) unaware of this, you do some coding locally and then finally push the changes/updates in an
+        online repository. when you do so, there will be an error:
+
+            ! [rejected]        main -> main (fetch first)
+            error: failed to push some refs to 'https://github.com/SaiyanPi/GitHub'
+            hint: Updates were rejected because the remote contains work that you do
+            hint: not have locally. This is usually caused by another repository pushing
+            hint: to the same ref. You may want to first integrate the remote changes
+            hint: (e.g., 'git pull ...') before pushing again.
+            hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+        
+        before pushing our locally made changes/updates, we need to make our local files same as the
+        files in online repository. and this is where the 'git pull' comes in. 
+
+---------------------------------------------------------------------------------------------------------
+
+cmd:
+    iii) pull changes from online repository to local files.
+
+        git pull origin branch_name
+        - git pull origin main
+
+    iv) now we will be able to push our changes to an online repository.

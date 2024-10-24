@@ -1,0 +1,59 @@
+git branch:
+
+- creates a branch.
+
+---------------------------------------------------------------------------------------------------------
+
+cmd:
+    i) create a new branch.
+
+        git branch branch_name
+        - git branch feature/login-system
+          git branch bugfix/header-style
+          git branch hotfix/critical-security-issue etc..
+    
+    ii) see list of branch.
+
+        git branch
+
+        o/p:    feature/login-system (branch 1)
+                * main (main branch| arrow indicates that we are currently on a main branch)
+
+    iii) switch branch.
+
+        git checkout branch_name
+        - git checkout feature/login-system
+
+        o/p:    * feature/login
+                main
+
+    iv) merge branch.
+
+        a) first, checkout the main branch
+           
+            git checkout main
+
+        b) merge the branch
+            
+            git merge feature/login-system
+            - branch 'feature/login-system' is now merged into the main branch
+
+        - do not forget to push after merging
+
+    v) deleting branch locally
+
+        git branch -d branch_name
+        - git branch -d feature/login-system
+
+    vi) deleting branch from remote repo.
+
+        git push origin --delete branch_name
+        - git push origin --delete feature/login-system
+
+    vii) see the list of merged branches.
+
+        git branch --merged
+
+    viii) see the list of branches that are not merged.
+
+        git branch --no-merged

@@ -1,0 +1,16 @@
+git diff:
+
+- shows the difference between the last commit and current version.
+------------------------------------------------------------------------------------
+
+cmd:
+    i) before adding in a staging area/git add:
+
+        git diff
+        
+    ii) after adding in staging area and committing /git add and git commit:
+
+        git diff commit_id1 commit_id2
+        - git diff e7d41d5 44148db
+
+        

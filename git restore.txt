@@ -1,0 +1,27 @@
+git restore:
+
+- restores the individual file to the recent commit version.
+- undoing the changes in file to a recent commit version.
+- similar to 'git stash' except it doesn't stash/save the changes in file.
+----------------------------------------------------------------------------------------------------------
+
+cmd:
+    i) restore the file.
+
+        git restore file_name
+        - git restore Index.html
+
+    ii) once we move file to a staging area(git add) or local repository(git commit), we cannot
+        do restore with just 'git restore Index.html' command.
+        To restore the file from staging area, first we need to move file back to working directory
+        and then only we will be able to restore the file.
+
+        a) moving file back to working directory from staging area =>
+
+            git restore --staged file_name
+            - git restore --staged Index.html
+        
+        b) finally undoing the changes =>
+
+            git restore file_name
+            - git restore Index.html

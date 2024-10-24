@@ -1,0 +1,31 @@
+git stash:
+
+- to save something for temporary purpose.
+- can undo(back to recent commit) the changes made in already created file.
+- but cannot undo the file creation with stash.
+- we can only stash the changes in file that are in working directory and staging area
+- once we commit the changes hence pushing the file in local repository, we cannot stash the changes.
+----------------------------------------------------------------------------------------------------------
+
+cmd:
+    i) stashing changes in file.
+
+        git stash
+
+    ii) listing the stash.
+        
+        git stash list
+
+        - stash@{0}: WIP on main: 7942331 git stash third case'
+          stash@{1}: WIP on main: 7942331 git stash third case'
+
+          here, 'git stash third case' is the latest recent commit
+
+    iii)applying the stash.
+
+        git stash apply 0
+        git stash apply 1
+
+    iv) clearing the stash list.
+
+        git stash clear

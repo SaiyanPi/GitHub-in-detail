@@ -1,0 +1,67 @@
+pull changes and merge branch:
+
+- see PullChanges_&_MergeBranch.png
+- also see pullChangesFromMultipleBranches_&_MergeBranch.png
+
+---------------------------------------------------------------------------------------------------------
+
+cmd:
+    i) create and switch to a new branch page/menu.
+
+        git branch page/menu
+        git checkout page/menu
+
+    ii) make changes and create new commits in a new branch page/menu.
+
+        a) commits for adding new page 'menu'.
+
+            git commit -m "menu page added"
+
+        b) commits for updating menu page.
+
+            git commit -m "updated menu"
+    
+    iii) switch back to main branch.
+
+        git checkout main
+
+    iv) make changes and create a new commit(s) in a main branch.
+
+        a) commit for updating index page.
+
+            git commit -m "updated index for menu"
+    
+    at this point,
+    - we 've 2 branches; main and page/menu
+    - we've pushed the newly added and updated menu page in 'page/menu' branch in the online repository
+      with 2 commits.
+    - we've also pushed the update on index page in the main branch with 1 commit. 
+
+    things that needs to be noticed,
+    - 2 commits we did in the page/menu branch are not visible from the main branch or in another word,
+      changes we made in page/menu branch cannot be seen in main branch.
+      but once we merge the page/menu branch into the main branch, all changes done in page/menu branch
+      will be visible in the main branch.
+    - similarly, changes we made back in main branch cannot be seen in the page/menu branch.
+      So, what if we want to apply the changes from main branch to new branch page/menu.
+      This is where the 'git pull origin main' comes in.
+
+    v) pull changes from main branch to branch page/menu.
+
+        a) first switch to a page/menu branch.
+
+            git checkout page/menu
+
+        b) pull the changes from main to a page/menu.
+            
+            git pull origin main
+
+    vi) finally merge the page/menu to a main branch
+
+        a) first checkout to main branch.
+            
+            git checkout main
+        
+        b) merge.
+
+            git merge page/menu
