@@ -1,0 +1,22 @@
+git checkout tag:
+
+- jumps to the given tag.
+- cmd: 
+        git checkout v1.1
+
+    -> HEAD now will be at the commit with tag v1.1.
+    -> if we do any changes in file or add new file and do 'git add' and 'git commit', a different
+       timeline of new commits will be created on a HEAD detached branch and things could get messy.
+    -> to get back on the recent commit in main branch, simply do 'git checkout main'.
+    -> (see git_checkout_TagCommitHEAD.png)
+
+___________________________________________________________________________________________________________
+
+git checkout commit:
+
+- jumps to the given commit.
+- cmd:
+        git checkout 59df737
+
+    -> HEAD now will be at the commit 59df737
+    -> similar as 'git checkout tag'

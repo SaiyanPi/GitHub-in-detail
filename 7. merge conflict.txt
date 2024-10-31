@@ -1,0 +1,45 @@
+merge conflicts:
+
+- suppose you have index.html file. and 2 branches; main branch and hornet branch.
+    if you edit the same line of code of a file from both branches, then merge conflict occurs
+    while pushing.
+
+----------------------------------------------------------------------------------------------------------
+    @ main branch
+    (index.html)
+
+    <html>
+        <head>
+            <title>Index Page</title>
+        </head>
+        <body>
+            <h1>merge conflict</h1>
+            <div>
+                <p>merge conflict from main</p> (c_1 - updated index from main branch)
+            </div>
+        </body>
+    </html>
+
+
+    @ hornet branch
+    (index.html)
+
+    <html>
+        <head>
+            <title>Index Page</title>
+        </head>
+        <body>
+            <h1>merge conflict</h1>
+            <div>
+                <p>merge conflict from hornet</p> (c_2 - updated index from hornet branch)
+            </div>
+        </body>
+    </html>
+
+    now, if we run the merge command from main branch: git merge hornet, we will get the merge
+    conflict error
+
+---------------------------------------------------------------------------------------------------------
+
+solving merge conflict:
+- accept either current changes or incoming changes.

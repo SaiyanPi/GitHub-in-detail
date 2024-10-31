@@ -1,0 +1,3 @@
+git ignore:
+
+- ignores the file that are mentioned inside the .gitignore file when pushing.

@@ -1,0 +1,91 @@
+git reset:
+
+i) git reset --soft 
+- it removes the commit but doesn't actually undo the changes in file.
+- it is used to move file from committed area(local rwepository) back to stagging area by removing commit.
+
+    git log --oneline:
+
+    o/p:    d0c1a7b (HEAD -> revert) delete button added in index               HEAD~
+            a1224fe index added                                                 HEAD~1
+            02d13ca index - paragraph                                           HEAD~2
+            5633135 (origin/revert) Revert "button added"                       HEAD~3
+
+    git reset --soft HEAD~:
+
+        - removes the commit 'd0c1a7b (HEAD -> revert) delete button added in index' but doesn't 
+          removes the delete button from index.
+
+    git log --oneline:
+
+        a1224fe (HEAD -> revert) index added
+        02d13ca index - paragraph
+        5633135 (origin/revert) Revert "button added"
+
+    git status:
+
+        Changes to be committed:
+           (use "git restore --staged <file>..." to unstage)
+                modified:   page/index.html
+
+
+ii) git reset
+- moves file back to working directory from stagging area but doesn't undo the changes.
+
+    git reset:
+        
+        Unstaged changes after reset:
+        M       page/index.html
+
+    git status:
+
+        Changes not staged for commit:
+        (use "git add <file>..." to update what will be committed)
+        (use "git restore <file>..." to discard changes in working directory)
+                modified:   page/index.html
+
+    (lets do the git add and git commit with new commit message "index re-added")
+
+
+iii) git reset --hard
+        (single commit)
+- removes the commit and changes related to the commit.
+- i.e, moves file from local repository straight back to working directory.
+
+    git log --oneline:
+        
+        9d5d113 (HEAD -> revert) index re-added                                 HEAD~
+        a1224fe index added                                                     HEAD~1
+        02d13ca index - paragraph                                               HEAD~2
+        5633135 (origin/revert) Revert "button added"                           HEAD~3
+
+    git reset --hard HEAD~:
+        - removes the commit '9d5d113 (HEAD -> revert) index re-added' and also removes the delete button.
+        - HEAD now will be at a1224fe
+
+    git log --oneline:
+        
+        a1224fe (HEAD -> revert) index added
+        02d13ca index - paragraph
+        5633135 (origin/revert) Revert "button added"
+
+
+- git reset --hard can also be used to go back on multiple commits
+        git log --oneline:
+
+                9e11412 (HEAD -> revert) index-delete                           HEAD~
+                3d9e11a index-edit                                              HEAD~1
+                4e2f3d0 index-submit                                            HEAD~2
+                a1224fe index added                                             HEAD~3
+                02d13ca index - paragraph                                       HEAD~4
+
+        git reset --hard HEAD~2:
+                - this removes the commit 9e11412 and 3d9e11a along with the changes related with those
+                  commits.
+                - HEAD will be now at 4e2f3d0 index-submit
+
+        git log --oneline:
+
+                4e2f3d0 (HEAD -> revert) index-submit                           HEAD~
+                a1224fe index added                                             HEAD~1
+                02d13ca index - paragraph                                       HEAD~2

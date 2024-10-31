@@ -1,0 +1,49 @@
+git tag and github releases:
+
+- Tags are ref's that point to specific points in Git history.
+- when we create a tag, current commit holds the tag
+- tagging is generally used to capture a point in history that is used for a marked version release.
+- tag is like a branch that doesn't change. unlike branches, tags, after created haved no further
+  history of commits.
+- creatinga tag:
+    cmd: git tag tag_name
+- deleting a tag:
+    cmd: git tag -d tag_name / git push origin --delete tag_name
+- pushing tag:
+    cmd git push origin tag_name
+- listing tags:
+    cmd: git tag
+
+----------------------------------------------------------------------------------------------------------
+
+git log --oneline:
+
+    b742e1d (HEAD -> main) updated index                    (HEAD~/current point/current commit)
+    02d13ca index - paragraph
+    5633135 Revert "button added"
+    437eede button added
+
+1) creating a tag
+
+    git tag v1.0
+
+git log --oneline:
+
+    b742e1d (HEAD -> main, tag: v1.0) updated index
+    02d13ca index - paragraph
+    5633135 Revert "button added"
+    437eede button added
+
+2) pushing a tag
+
+    git push origin v1.0
+
+    - now, we've created a point in history that holds the progress up until those
+      point(b742e1d (HEAD -> main, tag: v1.0) updated index), it's like a branch without no further
+      history of commits.
+
+_________________________________________________________________________________________________________
+
+GitHub release:
+
+- while tag can have small updates, release can have bigger updates.

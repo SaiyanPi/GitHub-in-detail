@@ -1,0 +1,23 @@
+git revert:
+
+- reverts the commit.
+- it doesn't remove the commit but reverts the changes done on the particular commit but 
+  while doing so it creates a new commit.
+
+---------------------------------------------------------------------------------------------------------
+
+let's say we have a 'git log --oneline' as follows and we want to revert the 'button added' commit:
+    
+    437eede (HEAD -> revert, origin/revert) button added        (HEAD 0)
+    2606b1f updated menu                                        (HEAD 1)
+    c4d0846 added home and menu                                 (HEAD 2)
+
+then, 
+cmd: git revert HEAD~0
+
+- now changes related to the commit 'button added' will be gone and the new log will be
+    
+    5633135 (HEAD -> revert) Revert "button added"
+    437eede (origin/revert) button added
+    2606b1f updated menu
+    c4d0846 added home and menu

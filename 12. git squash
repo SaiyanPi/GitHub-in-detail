@@ -1,0 +1,65 @@
+git squash:
+
+- squash/combine a multiple commits to single commit.
+  git rebase (--continue | --abort | --skip)
+
+- let's say we have a 'git log --oneline' as:
+    
+            591d895 (HEAD -> main, origin/main) title - mouse
+            e0e79d3 title - keyboard
+            3c9a5df paragraph - keyboard
+            8ad0a3d paragraph - mouse
+            83bc386 added mouse and keyboard
+
+    -> we want to combine the first 4 commits to a '83bc386 added mouse and keyboard' commit
+
+    1) git rebase -i HEAD~5
+
+        o/p: 
+            591d895 (HEAD -> main, origin/main) title - mouse
+            pick 83bc386 added mouse and keyboard
+            pick 8ad0a3d paragraph - mouse
+            pick 3c9a5df paragraph - keyboard
+            pick e0e79d3 title - keyboard
+            pick 591d895 title - mouse
+
+    2) change the keyword 'pick' of the commitsthat we want to squash into 'squash' 
+
+        591d895 (HEAD -> main, origin/main) title - mouse
+        pick 83bc386 added mouse and keyboard
+        squash 8ad0a3d paragraph - mouse
+        squash 3c9a5df paragraph - keyboard
+        squash e0e79d3 title - keyboard
+        squash 591d895 title - mouse
+
+    3) Click ESC, ENTER, :, x, and ENTER
+
+        591d895 (HEAD -> main, origin/main) title - mouse
+        pick 83bc386 added mouse and keyboard
+        # This is a combination of 5 commits.
+        # This is the 1st commit message:
+
+        added mouse and keyboard
+
+        # This is the commit message #2:
+
+        paragraph - mouse
+
+        # This is the commit message #3:
+
+        paragraph - keyboard
+
+        # This is the commit message #4:
+
+        title - keyboard
+
+        # This is the commit message #5:
+
+        title - mouse
+
+    4) again Click ESC, ENTER, :, x, and ENTER to exit
+
+    5) now we should be back on a normal terminal and if we 'git log --oneline'
+
+        o/p: c559593 (HEAD -> main) added mouse and keyboard
+        

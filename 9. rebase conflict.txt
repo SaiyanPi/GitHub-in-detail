@@ -1,0 +1,39 @@
+rebase conflict:
+
+- similar to merge conflict except we get the conflict error while rebasing.
+
+----------------------------------------------------------------------------------------------------------
+
+solving rebase conflict:
+
+- since we edit the same line of code of the same file from 2 different branches, to solve
+    rebase conflict, we have to apply only one changes; either changes from the main branch or another
+    branch. 
+
+    fa52e28 - updated index from main branch
+    e163f1e - updated index from cow branch    
+    ec7dc05 - added cow page
+    ab6e27d 
+
+    if we do 'git merge main' from cow branch, we will get a rebase merge conflict error. to solve it,
+    we either have to keep commit e163f1e(incoming changes) or fa52e28(current changes) to solve the
+    rebase conflict. let's assume we've decided to keep the current changes/changes from main branch
+    and discard incoming changes/changes from cow branch.
+
+- now if we do 'git status' then index.html file would be modified so we need
+
+    cmd: git add . / git add index.html
+
+    cmd: git commit -m "rebase conflict index"
+
+       - terminal output:   interactive rebase in progress; onto 
+                            Last commands done (2 commands done):
+                            pick ec7dc05 added cow page
+                            pick e163f1e updated index from cow branch
+                            No commands remaining.
+                            You are currently rebasing branch 'page/cow' on 'fa52e28'.
+                            (all conflicts fixed: run "git rebase --continue")
+    
+    cmd: git rebase --continue
+
+- finally the rebase is done. now, we can switch to main branch and rebase the cow branch.
