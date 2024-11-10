@@ -1,0 +1,36 @@
+structured pull request.
+
+- let's imagine a scenario, we are working on a open-source contribution that might take 2/3 days.
+    During that period someone from the company or other contributors made some changes in the repo main
+    branch. so the appropriate steps will be as follows:
+
+    A) git pull upstream main
+        - pull changes from company repo main branch to our local system main branch
+
+    B) git push origin main
+        - push changes from local system main branch to our repo/forked repo main branch
+
+- at this point,
+    -> we've pulled changes from company repo main branch to our local system main branch.
+    -> we've also pushed the changes to our repo/forked repo main branch from local system main branch.
+    -> in addition to all of this, we also have another branch in our local system, where ae have been
+        working past 2/3 days say 'feature/x'. NOW, THE CHANGES WE'VE PULLED FROM THE COMPANY'S REPO ARE
+        NOT YET IN OUR BRANCH 'FEATURE/X'; THEY ARE IN OUR MAIN BRANCH. SO NEXT WE NEED TO MERGE THE MAIN
+        BRANCH
+
+    C) git checkout feature/x
+        - switching branch before merging main(branch with changes0)
+
+       git merge main
+        - now, changes are also in our branch 'feature/x'.
+            in other word, changes we worked on for 2/3 days in branch 'feature/x' is up to date with the
+            changes other developers did in company's repo.
+            since changes are up to date in both branch and we have our additional changes in our branch
+            'feature/x', we can push our changes to our repo/forked repo.
+        
+    D) git push origin feature/x
+        - we've published our changes in our repo/forked repo branch 'feature/x'
+    
+    E) create pull request in company's repo main branch
+
+(see structured_pull_request.png)

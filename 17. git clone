@@ -1,0 +1,21 @@
+git clone:
+
+- clones the project into our system.
+- if we do some changes on the cloned project that is on our system now, and we want to to push
+    the updated project in our own remote repository, first we need to remove the origin and then add
+    our own origin.
+
+---------------------------------------------------------------------------------------------------------
+
+    cmd:
+        1) cloning the project from remote repository.
+            
+            git clone project/repository_link
+
+        2) removing the remote origin.
+
+            git remote rm origin
+
+        3) Now we can add our own origin / remote repo link and do push.
+
+            git remote add origin repository_link

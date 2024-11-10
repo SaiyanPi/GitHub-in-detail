@@ -1,0 +1,62 @@
+open-source contribution:
+
+- steps:
+    1) fork
+    2) clone the repo into local system
+    3) never work on main branch, create a new branch, checkout, work on that branch, and push on that branch
+    4) send pull request
+    if changes/updates you've done looks good, the owner will merge it.
+
+-------------------------------------------------------------------------------------------------------------
+
+    1) forking the repository will create a new repository in our own account.
+
+    2) clone the repo(forked) source code into our local system.
+
+    3) create a branch, work on it, and push on it
+
+    4) next we want to merge the changes we've made into the original repository from which we've forked.
+        for that, we need to create a pull request in company's repository.
+
+        now, owner of original repo(some company) will see the pull request and all the changes we've made.
+        if everything is okay in our changes, they can merge pull request and the changes will be applied
+        to their original repository.
+
+___________________________________________________________________________________________________________
+
+pull changes from original repo to forked repo in our account:
+
+- at this point we have
+    i) an original repo from some company
+    ii) forked repo in our account
+    iii) cloned repo source code in our local system.
+
+    now, the original repo will have other changes from other contributers or company and how to pull
+    those changes into our forked repo?
+
+- steps:
+    A) add a connection to a original repository
+    cmd:
+        
+        git remote add connection_name original_repository_link
+        git remote add upstream https://github.com/facebook/react.git
+
+         -> now we've established a connection with the original repository
+         -> to list all the connection: git remote
+         -> at this point we have 2 connections; origin and upstream.
+         -> to list connections with url: git remote -v
+
+    B) now, we can pull from the connection.
+    cmd: 
+
+        git pull connection_name branch_name
+        git pull upstream main
+
+        -> at this point we have pulled the changes from original repo into our local system but the changes
+            are not yet applied in the forked repo in our account.
+        -> so obviously next, we need to push the changes 
+
+    C) push the changes to forked repo in our account
+    cmd:
+
+        git push origin main
