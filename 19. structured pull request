@@ -6,6 +6,7 @@ structured pull request.
 
     A) git pull upstream main
         - pull changes from company repo main branch to our local system main branch
+        - here, upstream is a connection name.
 
     B) git push origin main
         - push changes from local system main branch to our repo/forked repo main branch
@@ -13,7 +14,7 @@ structured pull request.
 - at this point,
     -> we've pulled changes from company repo main branch to our local system main branch.
     -> we've also pushed the changes to our repo/forked repo main branch from local system main branch.
-    -> in addition to all of this, we also have another branch in our local system, where ae have been
+    -> in addition to all of this, we also have another branch in our local system, where we have been
         working past 2/3 days say 'feature/x'. NOW, THE CHANGES WE'VE PULLED FROM THE COMPANY'S REPO ARE
         NOT YET IN OUR BRANCH 'FEATURE/X'; THEY ARE IN OUR MAIN BRANCH. SO NEXT WE NEED TO MERGE THE MAIN
         BRANCH
