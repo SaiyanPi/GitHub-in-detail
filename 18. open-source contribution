@@ -4,7 +4,7 @@ open-source contribution:
     1) fork
     2) clone the repo into local system
     3) never work on main branch, create a new branch, checkout, work on that branch, and push on that branch
-    4) send pull request
+    4) send pull request from GitHub
     if changes/updates you've done looks good, the owner will merge it.
 
 -------------------------------------------------------------------------------------------------------------
